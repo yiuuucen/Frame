@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<style>
+		.my_btn button{width: 85px;height: 50px;border: none;background: #f6f8f8;}
+		.my_btn .dropdown-menu img{margin:5px;}
+		.my_btn .dropdown-menu{animation: 0.2s linear fadeIn;}
+		@keyframes fadeIn{
+			0%{opacity: 0;transform: translateY(-20px);}
+			100%{opacity:1;transform: translateY(0px);}
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		
+		
+		<!-- <div class="row">	
+			<div class="col-lg-3">
+				<div class="dropdown open">
+				  <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" id="dropdownMenu1"  aria-haspopup="true" aria-expanded="true">
+				    Dropdown
+				   <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
+				    <li class="dropdown-header">第一部分</li>
+				    <li><a href="#">Action</a></li>
+				    <li><a href="#">Another action</a></li>
+				    <li><a href="#">Something else here</a></li>
+				    <li role="separator" class="divider"></li>
+				    <li><a href="#">Separated link</a></li>
+				  </ul>
+				</div>
+			</div>
+		</div> -->
+		
+		<div class="dropdown my_btn ">
+		  <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" >
+		   Plugins
+		   <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" >
+		    <li class="dropdown-header">第一部分</li>
+		    <li>
+		    	<a href="/popular/45/plugins-extensions">
+		            <img width="16" height="16" class="m-r-sm" src="https://www.codester.com/static/img/popular-icon-alt.png">
+		            <span>Most Popular</span>
+		        </a>
+		    </li>
+		    <li>
+		    	<a href="/popular/45/plugins-extensions">
+		    		<img width="16" height="16" class="m-r-sm" src="https://www.codester.com/static/img/popular-icon-alt.png">
+		    		<span>Most Popular</span>
+		    	</a>
+		    </li>
+		    <li>
+		    	<a href="/popular/45/plugins-extensions">
+		    		<img width="16" height="16" class="m-r-sm" src="https://www.codester.com/static/img/popular-icon-alt.png">
+		    		<span>Most Popular</span>
+		    	</a>
+		    </li>
+		    <li>
+		    	<a href="/popular/45/plugins-extensions">
+		    		<img width="16" height="16" class="m-r-sm" src="https://www.codester.com/static/img/popular-icon-alt.png">
+		    		<span>Most Popular</span>
+		    	</a>
+		    </li>
+		  </ul>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<script src='js/jquery-3.2.1.js'></script>
+	<script src='js/bootstrap.js'></script>
+	<script>
+		// $('.dropdown-toggle').on('mouseover',function(){
+		// 	alert(1);
+		// })
+		// $('.dropdown-toggle').hover(function(){alert(1)},function(){alert(2)})
+		var timer=null;
+		$('.dropdown-toggle').hover(function(){
+			clearInterval(timer);
+			$('.dropdown').addClass('open');
+		},function(){
+			timer=setInterval(function(){
+				$('.dropdown').removeClass('open');
+			},100);
+		});
+
+		$('.dropdown-menu').hover(function(){
+			clearInterval(timer);
+
+		},function(){
+			timer=setInterval(function(){
+				$('.dropdown').removeClass('open');
+			},100);
+		});
+	</script>
+</body>
+</html>
